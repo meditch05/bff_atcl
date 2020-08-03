@@ -42,7 +42,7 @@ podTemplate(label: label, cloud: 'kubernetes', serviceAccount: 'jenkins', // nod
 
                 stage('Build Maven') {  // Maven Integration:3.3
                         container('maven') {
-                        		sh "mvn clean all"
+                        		sh "mvn clean "
                                 sh "mvn -f ./pom.xml -B -DskipTests package" // clean package
                                 // sh "pwd"
                                 // sh "df -kP ."                                                        // sh "ls -l"
