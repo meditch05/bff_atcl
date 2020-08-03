@@ -8,18 +8,11 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
-import com.mw.mwportal.bff.dto.Opmate_BatchDTO;
-import com.mw.mwportal.bff.dto.Opmate_ondemand_listDTO;
 import com.mw.mwportal.bff.dto.RunResultDetailDTO;
-import com.google.common.collect.Lists;
 import com.google.gson.Gson;
 
 public class OpmateService {
@@ -75,16 +68,6 @@ public class OpmateService {
 				// System.out.println(item.toString());
 
 				list.add(item);
-			}
-
-			// 다 완료되면 전체 List를 복호화 / HTML 형식으로 변환
-			for (RunResultDetailDTO item : list) {
-				//////////////////////////////////////////////////////////////////////////////////////////////////
-				// OS 별로 Clear Screen 문자열이 달라서 암호화 문자열을 자르는 방식은 제외
-				//////////////////////////////////////////////////////////////////////////////////////////////////
-				// Remove Character "G1TIG1tK" "G1TIG1sy"
-				// String enc = item.getencbase64out();
-				// item.setencbase64out(enc.substring(8, enc.length())); // Remove First 8 Chars
 			}
 
 		} catch (Exception e) {
