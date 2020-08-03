@@ -1,23 +1,23 @@
 apiVersion: apps/v1 
 kind: Deployment 
 metadata: 
-  name: mwportal-bff
-  namespace: mwportal
+  name: bff-atcl
+  namespace: test
   labels: 
-    app: mwportal-bff
+    app: bff-atcl
 spec: 
   replicas: 1
   selector:
     matchLabels:
-      app: mwportal-bff
+      app: bff-atcl
   template: 
     metadata: 
       labels: 
-        app: mwportal-bff
+        app: bff-atcl
     spec:
       containers: 
       - name: mwportal-bff
-        image: myregistry.mwportal.com:30001/mwportal/mwportal-bff:1.0
+        image: 847322629192.dkr.ecr.ap-northeast-2.amazonaws.com/bff-atcl:1.0
         imagePullPolicy: Always        
         ports: 
         - containerPort: 8080 
@@ -30,5 +30,5 @@ spec:
       - name: timezone-config
         hostPath:
           path: /usr/share/zoneinfo/Asia/Seoul
-      nodeSelector:
-        node-role.kubernetes.io/worker: "true"
+      #nodeSelector:
+      #  node-role.kubernetes.io/worker: "true"

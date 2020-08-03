@@ -1,10 +1,10 @@
 apiVersion: extensions/v1beta1 
 kind: Ingress 
 metadata: 
-  name: mwportal-bff
-  namespace: mwportal
+  name: bff-atcl
+  namespace: test
   labels: 
-    app.kubernetes.io/name: mwportal-bff
+    app.kubernetes.io/name: bff-atcl
   annotations:
     kubernetes.io/ingress.class: "nginx"    
     nginx.ingress.kubernetes.io/rewrite-target: /
@@ -12,10 +12,10 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "128m" 
 spec: 
   rules: 
-  - host: bff.mwportal.com
+  - host: bff.tbiz-atcl.net
     http: 
       paths: 
       - path: / 
         backend: 
-          serviceName: mwportal-bff
+          serviceName: bff-atcl
           servicePort: 8080 
