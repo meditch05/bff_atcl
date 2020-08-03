@@ -45,7 +45,7 @@ podTemplate(label: label, cloud: 'kubernetes', serviceAccount: 'jenkins', // nod
                                 sh "mvn -f ./pom.xml -B -DskipTests package" // clean package
                                 // sh "pwd"
                                 // sh "df -kP ."                                                        // sh "ls -l"
-                                sh "cp ./target/app-1.0.jar ."
+                                sh "cp ./target/app-1.0.war ."
                         }
                 }
 
