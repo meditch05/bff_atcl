@@ -7,16 +7,9 @@ import com.google.gson.annotations.SerializedName;
 @Getter
 public class RunResultDetailDTO {
 
-	@SerializedName("empno")
     private String empno;
-	
-	@SerializedName("salary")
     private String salary;
-	
-	@SerializedName("fromdate")
     private String fromdate;
-	
-	@SerializedName("todate")
     private String todate;
 
     @Override
@@ -24,9 +17,8 @@ public class RunResultDetailDTO {
         return "{" +
                 	"\"empno\": \"" + empno + "\", " + 
                 	"\"salary\": \"" + salary + "\", " +
-                	"\"fromdate\": \"" + fromdate + "\"" +
+                	"\"fromdate\": \"" + fromdate + "\", " +
                 	"\"todate\": \"" + todate + "\"" +
-                	// "\"decodestr\": \"" + decodestr + "\"" +
                 '}';
     }
 }

@@ -26,12 +26,6 @@
 
 			<section class="content container-fluid">
 				<div class="box">
-					<div class="box-header bg-info">
-						<h1 class="box-title">
-							<button style="margin-right: 50px; float: center;" onclick="GetSelected_CallPost();" class="btn btn-primary  btn-sm ">점검실행</button>
-							<span class="badge badge-info">OPMATE Ondemand Check 후 Button 클릭</span>
-						</h1>
-					</div>
 
 					<!-- /.box-header -->
 					<div class="box-body ">
@@ -39,7 +33,6 @@
 						<table class="table table-striped table-bordered table-condensed" id="ODM_CHECK_OPMATE" style="min-width: 775px; width: 100%; font-size:10pt; font-family:굴림체;">
 							<thead class="thead-dark">
 								<tr>
-									<th class="text-center">체크</th>
 									<th class="text-center">사번</th>
 									<th class="text-center">월급</th>
 									<th class="text-center">입사일</th>
@@ -49,7 +42,6 @@
 							<tbody>
 								<c:forEach var="result" items="${resultList}">
 									<tr>
-										<td><input type="checkbox" name="checkService" id="checkService" value="${result.task_id}|${result.hostname}" /></td>
 										<td>${result.empno}</td>
 										<td>${result.salary}</td>								
 										<td>${result.fromdate}</td>

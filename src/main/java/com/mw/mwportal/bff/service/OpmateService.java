@@ -31,13 +31,14 @@ public class OpmateService {
 		// Opmate가 끝나서 값이 채워졌을때 가져와야 함.  2019-09-28
 		// Sleep 을 걸던지, 호출해서 끝나는 시간 체크해서 바로 땡겨오던지.
 		
-		String url = "http://restapi.test.svc:8080/get/salary/" + emp_no;
+		// String url = "http://restapi.test.svc:8080/get/salary/" + emp_no;
+		String url = "http://api.tbiz-atcl.net/get/salary/" + emp_no;
 		String jsonResultMSG = "";
 		List<RunResultDetailDTO> list = new ArrayList<RunResultDetailDTO>();
 		
 		MwportalUtils utils = new MwportalUtils();
 				
-		logger.info("at msa_get_json() : http://restapi.test.svc:8080/get/salary/" + emp_no + " ==== Begin");		
+		logger.info("at msa_get_json() : " + url + " ==== Begin ===========================");		
 		
 		System.out.println("Call URL = " + url);
 
@@ -48,8 +49,13 @@ public class OpmateService {
 			// System.out.println(" Json Return String ====================== " );
 			// System.out.println(jsonResultMSG);
 
-			for (RunResultDetailDTO item : getRunResultDETAILDTO(jsonResultMSG)) {
-				System.out.println("======= RunResultDetailDTO Loop (" + emp_no  + ") =======");
+			for (RunResultDetailDTO item : getRunResultDETAILDTO(jsonResultMSG)) {				
+				System.out.println("toString() - " + item.toString() );
+				System.out.println("getEmpno   - " + item.getEmpno() );
+				System.out.println("getSalary  - " + item.getSalary());
+				System.out.println("getFromdate- " + item.getFromdate());
+				System.out.println("getTodate  - " + item.getTodate() );
+				
 				// System.out.println("Result Status - " + item.getstatus() );
 				// System.out.println("Result encout - " + item.getencbase64out() );
 
@@ -58,11 +64,15 @@ public class OpmateService {
 				// 호출만되고 완료 "status" : "Ready"
 				// 하나라도 Complete 가 아니면 2초 Sleep 하고 null return 후 Controller 에서 다시 재호출
 				////////////////////////////////////////////////////////////
+				
+				/*
 				if (!StringUtils.equals(item.getEmpno(), "10051")) {
 					System.out.println("Sleep " + sleep_time + " ms : [" + item.getEmpno() + "]");
 					Thread.sleep(sleep_time);
 					return null;
 				}
+				*/
+				
 				// item.setdecodestr();
 				// System.out.println(item.getdecodestr());
 				// System.out.println(item.toString());
@@ -75,8 +85,7 @@ public class OpmateService {
 		}
 
 		logger.info("List<RunResultDetail> list  ==== list.size() = " + list.size());
-		logger.info(
-				"at msa_opmategw_result_view() : http://opmate-gw.mwportal.svc:8080/view ========================== End");
+		logger.info("at msa_get_json() : " + url + " ==== END ===========================");
 
 		return list;
 	}

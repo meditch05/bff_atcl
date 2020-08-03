@@ -40,7 +40,7 @@ public class BffController {
 			}
 		}
 
-		result.addObject("resultDetailList", resultDetailList);
+		result.addObject("resultList", resultDetailList);
 		result.setViewName("main/view_result");
 		
 		return result;	
