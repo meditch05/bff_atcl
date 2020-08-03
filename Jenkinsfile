@@ -42,6 +42,7 @@ podTemplate(label: label, cloud: 'kubernetes', serviceAccount: 'jenkins', // nod
 
                 stage('Build Maven') {  // Maven Integration:3.3
                         container('maven') {
+                        		sh "mvn clean all"
                                 sh "mvn -f ./pom.xml -B -DskipTests package" // clean package
                                 // sh "pwd"
                                 // sh "df -kP ."                                                        // sh "ls -l"
@@ -67,7 +68,7 @@ podTemplate(label: label, cloud: 'kubernetes', serviceAccount: 'jenkins', // nod
 
                 stage('k8s Update Deployment Image = ${image_tag}') {
                         container('kubectl') {
-                            // sh "kubectl delete -f ./kubernetes/deployment.yaml"
+                            sh "kubectl delete -f ./kubernetes/deployment.yaml"
                             sh "kubectl apply -f  ./kubernetes/deployment.yaml"
                             sh "kubectl get deploy,pod -n ${namespace} -l app=${app}"
                             sh "kubectl apply -f ./kubernetes/service.yaml"  // service.yaml 은 초기 테스트시에 구성해야함 ( 그래야지 ㅡ_ㅡ )
