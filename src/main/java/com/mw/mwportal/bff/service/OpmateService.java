@@ -31,8 +31,8 @@ public class OpmateService {
 		// Opmate가 끝나서 값이 채워졌을때 가져와야 함.  2019-09-28
 		// Sleep 을 걸던지, 호출해서 끝나는 시간 체크해서 바로 땡겨오던지.
 		
-		// String url = "http://restapi.test.svc:8080/get/salary/" + emp_no;
-		String url = "http://api.tbiz-atcl.net/get/salary/" + emp_no;
+		String url = "http://restapi.test.svc:8080/get/salary/" + emp_no; // OK : EKS Call
+		//String url = "http://api.tbiz-atcl.net/get/salary/" + emp_no;     // OK : EKS Call + Local Call
 		String jsonResultMSG = "";
 		List<RunResultDetailDTO> list = new ArrayList<RunResultDetailDTO>();
 		
