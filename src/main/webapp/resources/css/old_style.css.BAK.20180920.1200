@@ -1,0 +1,85 @@
+@charset "UTF-8";
+body	{	
+	font-family: "맑은 고딕", "돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
+	font-size : 12px;	
+	margin: 0px;
+	margin-top: 0px;
+	width: 100%;
+	height: 100%;	
+}
+
+table, td, th	{
+	border: 1px solid black;
+	font-size : 12px;
+}
+
+table	{
+	border-collapse: collapse;
+}
+
+th	{
+	background-color: #78BEED;
+}
+
+button, input{
+  font-family: "맑은 고딕", "돋움", dotum, "굴림", gulim, arial, helvetica, sans-serif;
+  border:1px solid #34495e;
+  text-align:center;
+  font-size : 12px;
+}
+
+#main-page {
+	margin-top: 75px;  /* main-page div MARGIN Pixel */ 
+	width: 100%;
+	height: 100%;
+}
+
+#topMenu {  
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  
+  background: red;
+  width: 100%;  
+}
+
+/* http://ko.learnlayout.com/position.html */
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  
+  padding: 0;
+  
+  background: black;  
+  list-style: none;    
+  /* width: 100%; */
+}
+
+.navbar>li {
+  display: inline-block;
+  float: left;
+  margin: 0; padding: 0;
+  color: black;
+}
+
+.navbar>li>a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  color: white;
+}
+.navbar>li>a:hover {
+  background: #78BEED;
+}

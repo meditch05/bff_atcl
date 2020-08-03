@@ -1,0 +1,177 @@
+/*custom font for text*/
+/*@import url(http://fonts.googleapis.com/css?family=Nunito);*/
+/*CSS file for fontawesome - an iconfont we will be using. This CSS file imported contains the font-face declaration. More info: http://fortawesome.github.io/Font-Awesome/ */
+/*@import url(http://thecodeplayer.com/uploads/fonts/fontawesome/css/font-awesome.min.css);*/
+
+/*Basic reset*/
+* {margin: 0; padding: 0;}
+
+/* General Demo Style */
+body{
+	background:#efefef url(../img/4.jpg) repeat top left;
+    /* background:#f9f9f9 url(../img/4.jpg) repeat top left; */
+    /* background:#efefef repeat top left; */
+	color: #333;
+	font-family: 'Oswald', Arial, sans-serif;
+	font-size: 13px;
+}
+.container{
+	position:relative;
+}
+a {
+	color:white;
+	text-decoration:none;
+	-webkit-transition:all ease-in 0.2s;
+	-moz-transition:all ease-in 0.2s;
+	-ms-transition:all ease-in 0.2s;
+	-o-transition:all ease-in 0.2s;
+	transition:all ease-in 0.2s;
+}
+h2 a:link {
+	color:#333;
+	text-decoration:none;
+}
+h2 a:visited {
+	color:#333;
+	text-decoration:none;
+}
+h2 a:hover {
+	color:#44a0c0;
+	text-decoration:none;
+	border-bottom:1px solid #f66;
+}
+h1{
+	margin:20px 0 0 0;
+	padding:20px 20px 10px 20px;
+	font-size:34px;
+	color:#333;
+    text-shadow:1px 1px 1px #fff;
+	text-align:left;
+	font-weight:400;
+    text-align:center;
+}
+h2 {
+	font-family: 'Droid Serif', serif;
+	font-weight: normal;
+	font-size:14px;
+	margin:0 auto;
+	text-align:center;
+}
+img {
+	max-width:100%;
+}
+
+/* Main Style */
+
+#topMenu {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  
+  width: 190px;  
+}
+
+#result_table {
+  /* font-family: system; */
+  /* letter-spacing:1px; */
+}
+#xvarm-chart-wrapper {
+  float: right;
+  width: 70%;	
+}
+
+#xvarm-chart {
+  float: left;
+}
+
+#table-page {
+  float: left;
+  width: 30%;
+}
+
+#main-page {
+    float:left;
+	margin: 0px auto auto 180px;
+	width: 100%;	
+}
+
+table {
+	border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 2px;    
+}  
+th {    
+	background: #064461;
+	color: white;
+}
+  
+#accordian {
+	position: fixed; 
+	
+	background: #333333;
+	width: 170px;
+    float:left;
+	margin: 0 auto 0 auto;
+	color: white;
+	/*Some cool shadow and glow effect*/
+	box-shadow: 
+		0 5px 15px 1px rgba(0, 0, 0, 0.6), 
+		0 0 180px 1px rgba(255, 255, 255, 0.5);
+}
+/*heading styles*/
+#accordian h3 {
+	font-size: 12px;
+	line-height: 34px;
+	padding: 0 10px;
+	cursor: pointer;
+	background: #064461;
+	background: linear-gradient(#003040, #002535);
+}
+/*heading hover effect*/
+#accordian h3:hover {
+	text-shadow: 0 0 1px rgba(255, 255, 255, 0.7);
+}
+/*iconfont styles*/
+#accordian h3 span {
+	font-size: 16px;
+	margin-right: 10px;
+}
+/*list items*/
+#accordian li {
+	list-style-type: none;
+}
+/*links*/
+#accordian ul ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 11px;
+	line-height: 27px;
+	display: block;
+	padding: 0 15px;
+	-webkit-transition: all 0.15s;
+	-moz-transition: all 0.15s;
+	-o-transition: all 0.15s;
+	-ms-transition: all 0.15s;
+	transition: all 0.15s;
+}
+/*hover effect on links*/
+#accordian ul ul li a:hover {
+	background: #003545;
+	border-left: 5px solid #09c;
+}
+/*Lets hide the non active LIs by default*/
+#accordian ul ul {
+	display: none;
+}
+#accordian li.active ul {
+	display: block;
+}
+

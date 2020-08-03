@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1 
+kind: Ingress 
+metadata: 
+  name: mwportal-bff
+  namespace: mwportal
+  labels: 
+    app.kubernetes.io/name: mwportal-bff
+  annotations:
+    kubernetes.io/ingress.class: "nginx"    
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/proxy-body-size: "128m" 
+spec: 
+  rules: 
+  - host: bff.mwportal.com
+    http: 
+      paths: 
+      - path: / 
+        backend: 
+          serviceName: mwportal-bff
+          servicePort: 8080 

@@ -1,0 +1,34 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: mwportal-bff
+  namespace: mwportal
+  labels: 
+    app: mwportal-bff
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mwportal-bff
+  template: 
+    metadata: 
+      labels: 
+        app: mwportal-bff
+    spec:
+      containers: 
+      - name: mwportal-bff
+        image: myregistry.mwportal.com:30001/mwportal/mwportal-bff:1.0
+        imagePullPolicy: Always        
+        ports: 
+        - containerPort: 8080 
+          name: http 
+          protocol: TCP
+        volumeMounts:
+        - name: timezone-config
+          mountPath: /etc/localtime
+      volumes:
+      - name: timezone-config
+        hostPath:
+          path: /usr/share/zoneinfo/Asia/Seoul
+      nodeSelector:
+        node-role.kubernetes.io/worker: "true"
