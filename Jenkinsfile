@@ -6,7 +6,7 @@
 
 def git_url       = "https://github.com/meditch05/bff_atcl.git"
 def ecr_url       = "847322629192.dkr.ecr.ap-northeast-2.amazonaws.com"
-def ecr_repo      = "bff-atcl"
+def ecr_repo      = "bff-atcl" // Change
 def docker_ver    = "1.0"
 def namespace     = "test"
 def app           = "bff-atcl"
